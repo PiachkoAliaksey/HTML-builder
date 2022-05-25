@@ -15,7 +15,7 @@ fs.readdir(path.join(__dirname, 'files'),(err, data)=>{
     }
     fs.readdir(path.join(__dirname, 'files-copy'),(err, dataT)=>{
        if(dataT.length !==data.length){
-        fs.rmdir(path.join(__dirname, 'files-copy'),{ recursive: true},(err)=>{
+        fs.rm(path.join(__dirname, 'files-copy'),{ recursive: true},(err)=>{
             if (err) throw err;
             fs.mkdir(path.join(__dirname, 'files-copy'), () => {
         

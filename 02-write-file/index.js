@@ -15,6 +15,9 @@ fs.writeFile(path.join(__dirname,'file.txt'), text, (error) => {
     console.log('Текст добавлен');
    });  
 });
+process.on('SIGINT', () => {
+    process.exit();
+  });
 process.on('exit',()=>stdout.write('До встречи!'))
 
 
